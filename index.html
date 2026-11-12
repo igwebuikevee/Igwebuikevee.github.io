@@ -3,18 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vee Igwebuike | Student Portfolio &amp; Academic Portal</title>
-  <!-- External CSS Stylesheet (Required by COS 106 Rubric) -->
-  <link rel="stylesheet" href="styles.css">
+  <title>Vee Igwebuike | Student Portfolio & Academic Hub</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- Semantic Header & Navigation Menu -->
   <header class="site-header">
-    <div class="container navbar">
-      <a href="index.html" class="logo">Vee<span>.dev</span></a>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Vee<span>.Portfolio</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">&#9776;</button>
       <nav aria-label="Main Navigation">
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About Me</a></li>
           <li><a href="projects.html">Projects</a></li>
@@ -25,67 +23,57 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="container">
-
-    <!-- Hero / Welcome Section -->
+  <main>
     <section class="hero fade-in">
-      <div class="hero-content">
-        <span class="welcome-badge">Welcome to My Student Portfolio</span>
-        <!-- Update with your full name as registered at MIVA Open University -->
-        <h1>Hi, I'm Vee Igwebuike</h1>
-        <p class="subtitle">Undergraduate Student &bull; Research Data Analyst &amp; Quantitative Researcher</p>
-        <p class="bio">
-          Welcome to my personal academic portfolio and student management platform. I specialize in web technologies, predictive modeling, and statistical inference—translating complex observational datasets into actionable scientific insights while building clean, responsive web applications.
-        </p>
-        <div class="hero-actions">
-          <a href="projects.html" class="btn btn-primary">View My Projects</a>
-          <a href="planner.html" class="btn btn-secondary">Open Academic Planner</a>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="badge">MIVA Open University &bull; COS 106 Portfolio</p>
+          <h1>Hello, I'm <span class="highlight">Vee Igwebuike</span></h1>
+          <p class="lead">
+            Welcome to my personal academic portfolio and student management hub. 
+            Explore my coursework, web development projects, and daily study planner.
+          </p>
+          <div class="hero-actions">
+            <a href="projects.html" class="btn btn-primary">View My Projects</a>
+            <a href="planner.html" class="btn btn-outline">Open Study Planner</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- Replace src with your local image path e.g., images/profile.jpg -->
+          <img src="https://placehold.co/320x320/1e3a8a/ffffff?text=Student+Photo" alt="Portrait photograph of Vee Igwebuike">
         </div>
       </div>
-
-      <!-- Student Photograph -->
-      <div class="hero-image-wrapper">
-        <img src="images/profile.jpg" alt="Portrait photograph of Vee Igwebuike" class="profile-photo">
-      </div>
     </section>
 
-    <!-- Quick Portal Overview (CSS Grid) -->
-    <section class="portal-overview">
-      <h2>Explore My Academic Portal</h2>
-      <div class="overview-grid">
-        <article class="card">
-          <h3>About Me</h3>
-          <p>Review my educational background at MIVA Open University, technical skill set, career aspirations, and personal interests.</p>
-          <a href="about.html" class="card-link">Read Biography &rarr;</a>
-        </article>
+    <section class="bio-section">
+      <div class="container">
+        <h2>Brief Biography</h2>
+        <p>
+          I am an undergraduate Computing student passionate about building clean, accessible, 
+          and responsive web applications. Currently studying Web Technologies (COS 106), I focus 
+          on mastering semantic HTML5, modern CSS layouts, and interactive JavaScript to solve 
+          everyday academic and real-world challenges.
+        </p>
 
-        <article class="card">
-          <h3>Research &amp; Web Projects</h3>
-          <p>Explore my practical coursework, machine learning frameworks, and web development builds with live previews and source code.</p>
-          <a href="projects.html" class="card-link">Browse Projects &rarr;</a>
-        </article>
-
-        <article class="card">
-          <h3>Academic Planner</h3>
-          <p>Manage coursework deadlines, track study milestones, and organize daily university tasks with an interactive JavaScript planner.</p>
-          <a href="planner.html" class="card-link">Launch Planner &rarr;</a>
-        </article>
+        <!-- HTML Multimedia Requirement (Audio) -->
+        <div class="media-box">
+          <h3>Audio Introduction</h3>
+          <p>Listen to a quick welcome note about my academic journey:</p>
+          <audio controls>
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Semantic Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Vee Igwebuike &bull; COS 106 Introduction to Web Technologies Term Project</p>
-      <p class="footer-links">
-        <a href="https://github.com/igwebuikevee" target="_blank" rel="noopener noreferrer">GitHub Profile</a> &bull;
-        <a href="contact.html">Contact Me</a>
-      </p>
+      <p>&copy; 2026 Vee Igwebuike | COS 106 Term Project &bull; MIVA Open University</p>
     </div>
   </footer>
 
+  <script src="js/script.js"></script>
 </body>
 </html>
