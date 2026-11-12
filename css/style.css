@@ -146,22 +146,22 @@ main {
 }
 
 .theme-toggle {
-  background-color: var(--bg-color);
+  background: transparent;
+  border: none;
   color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  padding: 0.4rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  padding: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  border-radius: 50%;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .theme-toggle:hover {
-  transform: translateY(-1px);
-  border-color: var(--accent-primary);
+  opacity: 0.7;
+  transform: scale(1.08);
 }
-
 /* =========================================
    4. Hero Section (CSS Grid)
    ========================================= */
