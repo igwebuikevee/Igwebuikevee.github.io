@@ -280,9 +280,25 @@ img {
   margin-bottom: 1rem;
 }
 
-.bio-section p {
+.page-section h2 {
+  margin-top: 2rem;
+}
+
+.bio-section p,
+.page-section p {
   color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.page-section ul:not(.nav-links):not(#taskList),
+.page-section ol {
+  padding-left: 1.5rem;
   margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.page-section li {
+  margin-bottom: 0.45rem;
 }
 
 .media-box,
@@ -345,6 +361,7 @@ img {
 .project-card h2,
 .project-card h3 {
   font-size: 1.15rem;
+  margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
@@ -360,6 +377,53 @@ img {
   flex-wrap: wrap;
   gap: 0.65rem;
   margin-top: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background-color: var(--surface-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+th {
+  background-color: var(--accent-light);
+  color: var(--text-primary);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  margin-top: 0.35rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.error-msg {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-top: -0.65rem;
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+.success-msg {
+  color: var(--success);
+  font-weight: 600;
+  margin-top: 0.75rem;
 }
 
 /* =========================================
@@ -431,8 +495,9 @@ img {
     height: 210px;
   }
 }
+
 /* =========================================
-   Academic Planner Task List & Buttons
+   8. Academic Planner Task List & Buttons
    ========================================= */
 #taskCounter {
   display: inline-block;
@@ -483,7 +548,6 @@ img {
   flex-shrink: 0;
 }
 
-/* Rounded-Square Theme Buttons */
 .btn-sm {
   padding: 0.45rem 0.95rem;
   border-radius: 7px;
@@ -499,7 +563,6 @@ img {
   transform: translateY(-1px);
 }
 
-/* Complete / Undo Button (Matches Primary Theme Accent) */
 .btn-complete {
   background-color: var(--accent-primary);
   color: var(--btn-text);
@@ -511,7 +574,6 @@ img {
   border-color: var(--accent-hover);
 }
 
-/* Delete Button (Matches Secondary Theme Surface with Warm Rose Hover) */
 .btn-delete {
   background-color: var(--accent-light);
   color: var(--text-primary);
