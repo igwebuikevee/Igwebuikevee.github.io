@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Planner | Vee Igwebuike</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Vee<span>.Portfolio</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="planner.html" class="active">Academic Planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-content fade-in">
+    <h1>Academic Task Planner</h1>
+    <p class="section-intro">Organize your assignments, study sessions, and project deadlines.</p>
+
+    <section class="card">
+      <form id="plannerForm" class="planner-form">
+        <div class="form-group">
+          <label for="taskTitle">Task / Assignment Title</label>
+          <input type="text" id="taskTitle" placeholder="e.g., Complete COS 106 JavaScript validation" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="taskCourse">Course Code</label>
+            <input type="text" id="taskCourse" placeholder="e.g., COS 106" required>
+          </div>
+          <div class="form-group">
+            <label for="taskDate">Due Date</label>
+            <input type="date" id="taskDate" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Academic Task</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="planner-header">
+        <h2>My Task List</h2>
+        <span id="taskCounter" class="badge">0 Tasks</span>
+      </div>
+      <ul id="taskList" class="task-list">
+        <!-- Tasks are dynamically rendered here via JavaScript -->
+      </ul>
+      <p id="emptyMessage" class="empty-state">No academic tasks added yet. Add a task above to get started!</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Vee Igwebuike | COS 106 Term Project &bull; MIVA Open University</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
