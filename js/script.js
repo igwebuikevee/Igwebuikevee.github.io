@@ -203,3 +203,21 @@ document.addEventListener("DOMContentLoaded", () => {
     return div.innerHTML;
   }
 });
+// Dark & Light Mode Toggle
+const themeToggle = document.getElementById("themeToggle");
+const rootElement = document.documentElement;
+
+// Apply saved theme on page load
+const savedTheme = localStorage.getItem("theme") || "light";
+rootElement.setAttribute("data-theme", savedTheme);
+
+if (themeToggle) {
+  themeToggle.textContent = savedTheme === "dark" ? "☀️ Light" : "🌙 Dark";
+
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = rootElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    rootElement.setAttribute("data-theme", nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    themeToggle.textContent = nextTheme === "dark" ? "☀️ Light" : "🌙 Dark";
+  });
+}
