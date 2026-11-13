@@ -314,18 +314,20 @@ img {
 }
 
 .media-box {
-  margin-top: 1.5rem;
+  margin: 3rem auto;
+  padding: 3rem;
+  max-width: 900px;
+  text-align: center;
 }
-
 .media-box h3 {
   margin-bottom: 0.4rem;
 }
-
-.media-box audio,
-.media-box video {
+.media-box audio, .media-box video {
   width: 100%;
-  max-width: 450px;
-  margin-top: 0.75rem;
+  max-width: 100%; 
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .projects-grid,
