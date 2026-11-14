@@ -1,87 +1,624 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vee Igwebuike </title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav-container">
-      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark and light mode">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
-      <a href="/" class="logo">Vee</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">&#9776;</button>
-      <nav aria-label="Main Navigation">
-        <ul class="nav-links" id="navLinks">
-          <li><a href="/" class="active">Home</a></li>
-          <li><a href="/about.html">About Me</a></li>
-          <li><a href="/projects.html">Projects</a></li>
-          <li><a href="/planner.html">Academic Planner</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header> 
+/* =========================================
+   1. Theme Variables (Light & Dark Mode)
+   ========================================= */
+:root {
+  --bg-color: #f5e8e7;         /* Soft blush page background */
+  --surface-color: #faf2f1;    /* Warm cream for header, cards, and planner */
+  --text-primary: #2e2422;     /* Deep espresso for headings & main text */
+  --text-secondary: #5c4d4a;   /* Muted warm brown for paragraphs */
+  --accent-primary: #2e2422;   /* Espresso buttons, active links & badges */
+  --accent-hover: #4a3b38;     /* Cocoa hover state */
+  --accent-light: #ede0de;     /* Subtle blush tint for pills & active nav */
+  --border-color: #e3d2d0;     /* Soft rose-taupe borders */
+  --btn-text: #faf2f1;         /* Light text on primary buttons */
 
-  <main>
-    <section class="hero fade-in">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p class="badge">Portfolio</p>
-          <h1>Hello, I'm <span class="highlight">Vee Igwebuike</span></h1>
-          <p class="lead">
-            Connecting healthcare and data science.       
-          </p>
-          <div class="hero-actions">
-            <a href="/projects.html" class="btn btn-primary">View My Projects</a>
-            <a href="/planner.html" class="btn btn-outline">Open Study Planner</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="images/profilepic.png" alt="Profile Picture">
-        </div>
-      </div>
-    </section>
+  /* Compatibility aliases */
+  --primary: var(--accent-primary);
+  --primary-dark: var(--accent-hover);
+  --accent: #8c5a54;
+  --bg-light: var(--bg-color);
+  --surface: var(--surface-color);
+  --text-main: var(--text-primary);
+  --text-muted: var(--text-secondary);
+  --border: var(--border-color);
+  --danger: #dc2626;
+  --success: #16a34a;
+  --radius: 10px;
+  --shadow: 0 4px 12px rgba(46, 36, 34, 0.08);
+}
 
-    <section class="bio-section">
-      <div class="container">
-        <h2>Get to Know me</h2>
-        <p>
-         I am a data analyst and have worked with over a hundred clients, either to create business insights or to analyze research results,
-           I have a health background in pharmacy so I specialize in health and medical domains. 
-        </p>
-       <!-- HTML Multimedia Requirement (Video) -->
-        <div class="media-box">
-          <video controls style="max-width: 100%; height: auto; border-radius: 8px;">
-            <source src="Assets/viz_placehold.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-    </section>
-    <section class="services-section" style="margin-bottom: 5rem;">
-  <div class="container">
-    <h2>Services Offered</h2>
-    <ul class="styled-list">
-      <li><strong>Healthcare Data Analysis:</strong> Transforming complex clinical and public health datasets into actionable insights using Python, R, and SQL.</li>
-      <li><strong>Bioinformatics &amp; Genomics:</strong> Building reproducible computational pipelines for multi-omics and genomic research.</li>
-      <li><strong>Epidemiological Modeling:</strong> Applying statistical analysis to support disease surveillance, outbreak readiness, and global health protection.</li>
-      <li><strong>Data Visualization:</strong> Creating intuitive dashboards and visual reports to communicate complex data findings to stakeholders.</li>
-    </ul>
-  </div>
-</section>
-  </main>
+[data-theme="dark"] {
+  --bg-color: #171211;         /* Deep espresso background */
+  --surface-color: #221b19;    /* Dark cocoa for header, cards, and planner */
+  --text-primary: #faf2f1;     /* Soft rose cream for headings & main text */
+  --text-secondary: #c4b2b0;   /* Muted warm taupe for paragraphs */
+  --accent-primary: #e8c5c3;   /* Soft blush buttons, active links & badges */
+  --accent-hover: #f5e8e7;     /* Lighter blush hover state */
+  --accent-light: #332826;     /* Muted dark rose tint for active nav */
+  --border-color: #3a2e2c;     /* Subtle warm dark borders */
+  --btn-text: #171211;         /* Dark text on primary buttons */
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Vee Igwebuike</p>
-    </div>
-  </footer>
+  /* Compatibility aliases */
+  --primary: var(--accent-primary);
+  --primary-dark: var(--accent-hover);
+  --accent: #d49b96;
+  --bg-light: var(--bg-color);
+  --surface: var(--surface-color);
+  --text-main: var(--text-primary);
+  --text-muted: var(--text-secondary);
+  --border: var(--border-color);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
 
-  <script src="js/script.js"></script>
-</body>
-</html>
+/* =========================================
+   2. Reset & Base Layout
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* =========================================
+   3. Header & Navigation (Flexbox)
+   ========================================= */
+.site-header {
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-primary);
+  background-color: var(--accent-light);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  padding: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 0.7;
+  transform: scale(1.08);
+}
+
+/* =========================================
+   4. Hero Section (CSS Grid)
+   ========================================= */
+.hero {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--accent-light);
+  color: var(--accent-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.lead {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 1.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.35rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: var(--btn-text);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn-outline {
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent-light);
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--surface-color);
+  box-shadow: var(--shadow);
+}
+
+/* =========================================
+   5. Bio, Sections, Cards, Tables & Forms
+   ========================================= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bio-section,
+.page-section,
+.page-content,
+.services-section {
+  padding: 3.5rem 0;
+}
+
+.bio-section h2,
+.page-section h1,
+.page-section h2,
+.page-content h1,
+.page-content h2,
+.services-section h2 {
+  margin-bottom: 1rem;
+}
+
+.page-section h2,
+.page-content h2 {
+  margin-top: 2rem;
+}
+
+.bio-section p,
+.page-section p,
+.page-content .section-intro {
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.page-section ul:not(.nav-links):not(#taskList),
+.page-section ol,
+.styled-list {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.page-section li,
+.styled-list li {
+  margin-bottom: 0.65rem;
+}
+
+.media-box,
+.card,
+.project-card,
+.planner-box,
+.contact-form {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.media-box {
+  margin: 3rem auto;
+  padding: 2.5rem;
+  max-width: 850px;
+  text-align: center;
+}
+
+.media-box h2,
+.media-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.media-box audio,
+.media-box video {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Projects Grid & Uniform Cards */
+.projects-grid,
+.project-grid,
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+  margin-top: 1.5rem;
+  align-items: stretch;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.card img,
+.project-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1.15rem;
+  border: 1px solid var(--border-color);
+}
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card h2,
+.project-card h3 {
+  font-size: 1.15rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-links,
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background-color: var(--surface-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+th {
+  background-color: var(--accent-light);
+  color: var(--text-primary);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  margin-top: 0.35rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.error-msg {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-top: -0.65rem;
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+.success-msg {
+  color: var(--success);
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+/* =========================================
+   6. Footer & Animations
+   ========================================= */
+.site-footer {
+  background-color: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* =========================================
+   7. Mobile Responsive Design
+   ========================================= */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .nav-links.active,
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-container {
+    flex-wrap: wrap;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-image {
+    order: -1;
+  }
+
+  .hero-image img {
+    width: 210px;
+    height: 210px;
+  }
+
+  .media-box {
+    padding: 1.5rem;
+  }
+}
+
+/* =========================================
+   8. Academic Planner Task List & Buttons
+   ========================================= */
+#taskCounter {
+  display: inline-block;
+  background-color: var(--accent-light);
+  color: var(--accent-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.2rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+#taskList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-meta {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.2rem;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.btn-sm {
+  padding: 0.45rem 0.95rem;
+  border-radius: 7px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+}
+
+.btn-sm:hover {
+  transform: translateY(-1px);
+}
+
+.btn-complete {
+  background-color: var(--accent-primary);
+  color: var(--btn-text);
+  border-color: var(--accent-primary);
+}
+
+.btn-complete:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn-delete {
+  background-color: var(--accent-light);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn-delete:hover {
+  background-color: #8c2d2d;
+  color: #faf2f1;
+  border-color: #8c2d2d;
+}
+
+@media (max-width: 600px) {
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
