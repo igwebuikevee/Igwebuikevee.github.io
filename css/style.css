@@ -76,7 +76,7 @@ main {
 
 .container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -162,7 +162,6 @@ main {
   opacity: 0.7;
   transform: scale(1.08);
 }
-
 /* =========================================
    4. Hero Section (CSS Grid)
    ========================================= */
@@ -262,7 +261,7 @@ main {
 }
 
 /* =========================================
-   5. Bio, Sections, Cards, Tables & Forms
+   5. Bio, Cards, Tables & Forms
    ========================================= */
 img {
   max-width: 100%;
@@ -271,44 +270,35 @@ img {
 }
 
 .bio-section,
-.page-section,
-.page-content,
-.services-section {
+.page-section {
   padding: 3.5rem 0;
 }
 
 .bio-section h2,
 .page-section h1,
-.page-section h2,
-.page-content h1,
-.page-content h2,
-.services-section h2 {
+.page-section h2 {
   margin-bottom: 1rem;
 }
 
-.page-section h2,
-.page-content h2 {
+.page-section h2 {
   margin-top: 2rem;
 }
 
 .bio-section p,
-.page-section p,
-.page-content .section-intro {
+.page-section p {
   color: var(--text-secondary);
   margin-bottom: 1.25rem;
 }
 
 .page-section ul:not(.nav-links):not(#taskList),
-.page-section ol,
-.styled-list {
+.page-section ol {
   padding-left: 1.5rem;
   margin-bottom: 1.5rem;
   color: var(--text-secondary);
 }
 
-.page-section li,
-.styled-list li {
-  margin-bottom: 0.65rem;
+.page-section li {
+  margin-bottom: 0.45rem;
 }
 
 .media-box,
@@ -324,42 +314,33 @@ img {
 }
 
 .media-box {
-  margin: 3rem auto;
-  padding: 2.5rem;
-  max-width: 850px;
-  text-align: center;
+  margin-top: 1.5rem;
 }
 
-.media-box h2,
 .media-box h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .media-box audio,
 .media-box video {
   width: 100%;
-  max-width: 100%;
-  border-radius: 8px;
-  margin-top: 1.5rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  margin-top: 0.75rem;
 }
 
-/* Projects Grid & Uniform Cards */
 .projects-grid,
 .project-grid,
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   margin-top: 1.5rem;
-  align-items: stretch;
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  justify-content: space-between;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -370,17 +351,11 @@ img {
 .card img,
 .project-card img {
   width: 100%;
-  height: 190px;
+  height: 185px;
   object-fit: cover;
   border-radius: 6px;
-  margin-bottom: 1.15rem;
+  margin-bottom: 1rem;
   border: 1px solid var(--border-color);
-}
-
-.project-body {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
 }
 
 .project-card h2,
@@ -461,7 +436,6 @@ input, textarea, select {
   padding: 1.5rem 0;
   font-size: 0.9rem;
   color: var(--text-secondary);
-  margin-top: auto;
 }
 
 @keyframes fadeIn {
@@ -519,10 +493,6 @@ input, textarea, select {
   .hero-image img {
     width: 210px;
     height: 210px;
-  }
-
-  .media-box {
-    padding: 1.5rem;
   }
 }
 
